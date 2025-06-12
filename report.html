@@ -1,0 +1,60 @@
+<!-- report.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reports</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+
+<body class="flex min-h-screen bg-gray-100 w-full">
+  <aside id="sidebar"></aside>
+  <div class="lg:ml-64 flex-1 flex flex-col w-full">
+    <nav id="navbar"></nav>
+    <main class="p-6 pb-18 space-y-4">
+      <div class="card">
+        <div class="border-b p-4 border-gray-200">
+          <h2 class="text-xl font-bold mb-2">Reports</h2>
+          <p class="text-[14px]">This page provides a summary of all user-generated posts, including the total number of posts containing the keyword "rerum". A breakdown of total post counts per user is also presented below.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="border-b p-4">
+          <h2 class="text-xl font-semibold flex">Total Posts with 'rerum' : <span id="rerumCount" class="ml-3">Loading...</span></h2>
+        </div>
+      </div>
+
+      <div>
+        <div class="border-b border-gray-200">
+          <table class="min-w-full bg-transparent rounded custom-table report-table">
+            <thead class="bg-greenme  shadow-none border-none">
+              <tr>
+                <th>User ID</th>
+                <th>Post Count</th>
+              </tr>
+            </thead>
+            <tbody id="userPostTableBody">
+              <tr class="bg-white"><td colspan="4" class="!text-center">Loading...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+    <footer id="footer"></footer>
+  </div>
+
+  <!-- Inject Layout -->
+  <script src="./assets/js/layoutLoader.js"></script>
+  
+  <!-- Main Scripts -->
+  <script type="module" src="./assets/js/api.js"></script>
+  <script type="module" src="./assets/js/utils.js"></script>
+  <script type="module" src="./assets/js/reportPage.js"></script>
+</body>
+</html>
